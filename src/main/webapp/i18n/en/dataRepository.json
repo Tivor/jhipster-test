@@ -1,0 +1,25 @@
+{
+    "dashboardApp": {
+        "dataRepository" : {
+            "home": {
+                "title": "Data Repositories",
+                "createLabel": "Create a new Data Repository",
+                "createOrEditLabel": "Create or edit a Data Repository",
+                "search": "Search for Data Repository"
+            },
+            "created": "A new Data Repository is created with identifier {{ param }}",
+            "updated": "A Data Repository is updated with identifier {{ param }}",
+            "deleted": "A Data Repository is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Data Repository {{ id }}?"
+            },
+            "detail": {
+                "title": "Data Repository"
+            },
+            "name": "Name",
+            "jdbcUrl": "Jdbc Url",
+            "jdbcDriver": "Jdbc Driver",
+            "dbUser": "Db User"
+        }
+    }
+}

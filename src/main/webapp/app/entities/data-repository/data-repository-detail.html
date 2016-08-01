@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span translate="dashboardApp.dataRepository.detail.title">Data Repository</span> {{vm.dataRepository.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="dashboardApp.dataRepository.name">Name</span></dt>
+        <dd>
+            <span>{{vm.dataRepository.name}}</span>
+        </dd>
+        <dt><span translate="dashboardApp.dataRepository.jdbcUrl">Jdbc Url</span></dt>
+        <dd>
+            <span>{{vm.dataRepository.jdbcUrl}}</span>
+        </dd>
+        <dt><span translate="dashboardApp.dataRepository.jdbcDriver">Jdbc Driver</span></dt>
+        <dd>
+            <span>{{vm.dataRepository.jdbcDriver}}</span>
+        </dd>
+        <dt><span translate="dashboardApp.dataRepository.dbUser">Db User</span></dt>
+        <dd>
+            <span>{{vm.dataRepository.dbUser}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="data-repository-detail.edit({id:vm.dataRepository.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

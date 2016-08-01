@@ -1,0 +1,24 @@
+{
+    "dashboardApp": {
+        "dashboard" : {
+            "home": {
+                "title": "Dashboards",
+                "createLabel": "Criar novo Dashboard",
+                "createOrEditLabel": "Criar ou editar Dashboard",
+                "search": "Pesquisar por Dashboard"
+            },
+            "created": "Um novo Dashboard é criado com o identificador {{ param }}",
+            "updated": "Um Dashboard é atualizado com o identificador {{ param }}",
+            "deleted": "Um Dashboard é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Dashboard {{ id }}?"
+            },
+            "detail": {
+                "title": "Dashboard"
+            },
+            "name": "Name",
+            "user": "User",
+            "panel": "Panel"
+        }
+    }
+}

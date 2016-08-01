@@ -1,0 +1,66 @@
+<div>
+    <h2 translate="dashboardApp.dashboard.home.title">Dashboards</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="dashboard.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="dashboardApp.dashboard.home.createLabel">
+                        Create new Dashboard
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="dashboardApp.dashboard.name">Name</span></th>
+                    <th><span translate="dashboardApp.dashboard.user">User</span></th>
+                    <th><span translate="dashboardApp.dashboard.panel">Panel</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dashboard in vm.dashboards track by dashboard.id">
+                    <td><a ui-sref="dashboard-detail({id:dashboard.id})">{{dashboard.id}}</a></td>
+                    <td>{{dashboard.name}}</td>
+                    <td>
+                        {{dashboard.user.login}}
+                    </td>
+                    <td>
+                        <span ng-repeat="panel in dashboard.panels">
+                            <a class="form-control-static" ui-sref="panel-detail({id: panel.id})">{{panel.name}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="dashboard-detail({id:dashboard.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="dashboard.edit({id:dashboard.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="dashboard.delete({id:dashboard.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

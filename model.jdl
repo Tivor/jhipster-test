@@ -1,0 +1,35 @@
+entity Dashboard {
+	name String
+}
+
+entity Panel {
+	name String,
+	sqlString String,
+	panelType PanelType
+}
+
+entity DataRepository {
+	name String,
+	jdbcUrl String,
+	jdbcDriver String,
+	dbUser String,
+    dbPassword String
+}
+
+enum PanelType {
+    INFO, BAR, MULTIBAR, PIE, DONUT, LINE
+}
+
+relationship ManyToMany {
+	Dashboard{panel} to Panel{dashboard}
+}
+
+relationship ManyToOne {
+	Dashboard{user} to User
+}
+
+relationship OneToOne {
+	Panel{dataRepository} to DataRepository
+}
+
+service Dashboard with serviceClass

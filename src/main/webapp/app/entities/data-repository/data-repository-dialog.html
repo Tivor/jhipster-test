@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDataRepositoryLabel" translate="dashboardApp.dataRepository.home.createOrEditLabel">Create or edit a Data Repository</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.dataRepository.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.dataRepository.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="dashboardApp.dataRepository.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.dataRepository.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="dashboardApp.dataRepository.jdbcUrl" for="field_jdbcUrl">Jdbc Url</label>
+            <input type="text" class="form-control" name="jdbcUrl" id="field_jdbcUrl"
+                    ng-model="vm.dataRepository.jdbcUrl"
+                    required />
+            <div ng-show="editForm.jdbcUrl.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jdbcUrl.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="dashboardApp.dataRepository.jdbcDriver" for="field_jdbcDriver">Jdbc Driver</label>
+            <input type="text" class="form-control" name="jdbcDriver" id="field_jdbcDriver"
+                    ng-model="vm.dataRepository.jdbcDriver"
+                    required />
+            <div ng-show="editForm.jdbcDriver.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.jdbcDriver.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="dashboardApp.dataRepository.dbUser" for="field_dbUser">Db User</label>
+            <input type="text" class="form-control" name="dbUser" id="field_dbUser"
+                    ng-model="vm.dataRepository.dbUser"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

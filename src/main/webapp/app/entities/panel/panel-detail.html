@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span translate="dashboardApp.panel.detail.title">Panel</span> {{vm.panel.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="dashboardApp.panel.name">Name</span></dt>
+        <dd>
+            <span>{{vm.panel.name}}</span>
+        </dd>
+        <dt><span translate="dashboardApp.panel.sqlString">Sql String</span></dt>
+        <dd>
+            <span>{{vm.panel.sqlString}}</span>
+        </dd>
+        <dt><span translate="dashboardApp.panel.dataRepository">Data Repository</span></dt>
+        <dd>
+            <a ui-sref="data-repository-detail({id:vm.panel.dataRepository.id})">{{vm.panel.dataRepository.name}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="panel-detail.edit({id:vm.panel.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

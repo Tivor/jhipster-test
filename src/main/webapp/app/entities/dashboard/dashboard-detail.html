@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span translate="dashboardApp.dashboard.detail.title">Dashboard</span> {{vm.dashboard.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="dashboardApp.dashboard.name">Name</span></dt>
+        <dd>
+            <span>{{vm.dashboard.name}}</span>
+        </dd>
+        <dt><span translate="dashboardApp.dashboard.user">User</span></dt>
+        <dd>
+            {{vm.dashboard.user.login}}
+        </dd>
+        <dt><span translate="dashboardApp.dashboard.panel">Panel</span></dt>
+        <dd>
+            <span ng-repeat="panel in vm.dashboard.panels">
+                <a ui-sref="panel-detail({id: panel.id})">{{panel.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="dashboard-detail.edit({id:vm.dashboard.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

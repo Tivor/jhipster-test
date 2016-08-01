@@ -1,0 +1,32 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jdbcUrl",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "jdbcDriver",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dbUser",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160731224921",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "data_repository",
+    "pagination": "no"
+}

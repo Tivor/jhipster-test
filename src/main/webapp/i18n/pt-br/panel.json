@@ -1,0 +1,24 @@
+{
+    "dashboardApp": {
+        "panel" : {
+            "home": {
+                "title": "Panels",
+                "createLabel": "Criar novo Panel",
+                "createOrEditLabel": "Criar ou editar Panel",
+                "search": "Pesquisar por Panel"
+            },
+            "created": "Um novo Panel é criado com o identificador {{ param }}",
+            "updated": "Um Panel é atualizado com o identificador {{ param }}",
+            "deleted": "Um Panel é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Panel {{ id }}?"
+            },
+            "detail": {
+                "title": "Panel"
+            },
+            "name": "Name",
+            "sqlString": "Sql String",
+            "dataRepository": "Data Repository"
+        }
+    }
+}
